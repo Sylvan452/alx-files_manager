@@ -20,14 +20,9 @@ class RedisClient {
 
   // get value for given key from redis server
   async get(key) {
-    try {
-      const redisGet = promisify(this.client.get).bind(this.client);
-      const value = await redisGet(key);
-      return value;
-    } catch (error) {
-      console.error('Error in get:', error);
-      throw error;
-    }
+    const redisGet = promisify(this.client.get).bind(this.client);
+    const value = await redisGet(key);
+    return value;
   }
 
   // set key value pair to redis server
