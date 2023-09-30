@@ -26,7 +26,7 @@ class RedisClient {
       return value;
     } catch (error) {
       console.error('Error in get:', error);
-      throw error; // Rethrow the error to propagate it
+      throw error;
     }
   }
 
